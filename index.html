@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna eletrônica</title>
+    <link rel="stylesheet" href="/assets/style.css">
+
+</head>
+<body>
+    <section class="urna">
+        <article class="tela">
+            <div class="fim pisca">
+                <p>FIM</p>
+            </div>
+            <div class="d-1">
+                <div class="d-1--info">
+                    <div class="d-1--info-aviso">
+                        <span>seu voto para</span>
+                    </div>
+                    <div class="d-1--info-cargo">
+                        <span>vereador</span>
+                    </div>
+                    <div class="d-1--info-numeros">
+                        <span>Número: </span>
+                        <div class="d-1--info-numero">
+                            <div class="d-1--info-numeroCaixa"></div>
+                        </div>
+                        
+                    </div>
+                    <div class="d-1--info-candidato">
+                        <p id="numero-invalido"></p>
+                        <p id="nulo" class="pisca"></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+                <aside>
+                    <div class="image">
+                        <img src="">
+                        <p></p>
+                    </div>
+                    <div class="image small">
+                        <img src="assets/images/person02.jpg">
+                        <p>Vice-prefeito</p>
+                    </div>
+                </aside>
+            </div>
+            <div class="d-2">
+                <p>Aperte a tecla:</p>
+                <p>CONFIRMA para CONFIRMAR este voto.</p>
+                <p>CORRIGE para REINICIAR este voto.</p>
+            </div>
+        </article>
+        <article class="teclado">
+            <div class="teclado--botao">1</div>
+            <div class="teclado--botao">2</div>
+            <div class="teclado--botao">3</div>
+            <div class="teclado--botao">4</div>
+            <div class="teclado--botao">5</div>
+            <div class="teclado--botao">6</div>
+            <div class="teclado--botao">7</div>
+            <div class="teclado--botao">8</div>
+            <div class="teclado--botao">9</div>
+            <div class="teclado--botao">0</div>
+            <div class="teclado--botao botao--branco">branco</div>
+            <div class="teclado--botao botao--corrige">corrige</div>
+            <div class="teclado--botao botao--confirma">confirma</div>
+        </article>
+    </section>
+    <script src="assets/etapas.js"></script> 
+    <script src="assets/index.js"></script>
+</body>
+</html>
