@@ -6,6 +6,8 @@
     100% {opacity: 0.2;}
 }
 
+.models{display: none;}
+
 .pisca{
     animation: piscar 1s infinite ;
 }
@@ -19,6 +21,7 @@
 
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -208,4 +211,58 @@ aside .image.small{
     width: 95px;
     height: 50px;
 }
+
+.candidatos{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 20px;
+    width: 900px;
+    height: 250px;
+    background-color: #3399ff;
+}
+
+.candidatos h1{
+    color: #eee;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.candidato{
+    display: flex;
+    justify-content: space-between;
+    height: calc(100% - 40px);
+    border: thin solid white;
+    color: #ddd;
+}
+.candidatos--candidato,
+.candidatos--vice{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    width: 200px;
+}
+
+.candidatos--candidato h1{ font-size: 1rem;}
+
+.candidatos--candidato img{
+    margin: 5px 0px;
+    height: 150px;
+}
+
+.candidatos--vice{ align-self: flex-end;}
+.candidatos--vice img{height: 130px;}
+.candidatos--vice h1{
+    font-size: .9rem;
+    margin-top: 5px;
+}
+
+
+
+
+
+
 

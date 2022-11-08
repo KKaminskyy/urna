@@ -1,6 +1,3 @@
-let selector = seletor => document.querySelector(`${seletor}`)
-let selectorAll = seletor => document.querySelectorAll(`${seletor}`)
-
 let cabecalho = selector('.d-1--info-aviso span')
 let cargo = selector('.d-1--info-cargo span')
 let numeroTxt = selector('.d-1--info-numero')
@@ -8,7 +5,6 @@ let numeroCaixa = selector('.d-1--info-numeroCaixa')
 let infoCandidato = selectorAll('.d-1--info-candidato p')
 let imagem = selector('aside')
 let instrucao = selector('.d-2')
-let etapaAtual = 0
 let numero = ''
 let votoNulo = false
 let votoBranco = false
@@ -16,12 +12,23 @@ let votoConfirmado = false
 let voto = []
 
 function comecarEtapa(){
+    informacoesCandidatos()
     let etapa = etapas[etapaAtual]
 
     numero = ''
     let numeroHtml = ''
     votoNulo = false
     votoBranco = false
+
+    cabecalho.style.opacity = 0
+    cargo.innerHTML = etapa.cargo
+    imagem.style.opacity = 0
+    infoCandidato.forEach(info => info.style.display = 'none')
+    instrucao.style.opacity = 0
+    selector('.d-1--info-numeros').style.display = 'block'
+    selectorAll('aside .image').forEach(imagem => imagem.style.display = 'none')
+    selector(`.d-1--info-candidato p:nth-child(1)`).style.display = 'none'
+    selector(`.d-1--info-candidato p:nth-child(2)`).style.display = 'none'
 
     for(let i=0; i <= etapa.numeros-1; i++){
         if(i === 0){
@@ -30,17 +37,7 @@ function comecarEtapa(){
             numeroHtml += '<div class="d-1--info-numeroCaixa"></div>'
         }
     }
-
-    cabecalho.style.opacity = 0
-    cargo.innerHTML = etapa.cargo
-    selector('.d-1--info-numeros').style.display = 'block'
     numeroTxt.innerHTML = numeroHtml
-    imagem.style.opacity = 0
-    infoCandidato.forEach(info => info.style.display = 'none')
-    instrucao.style.opacity = 0
-    selectorAll('aside .image').forEach(imagem => imagem.style.display = 'none')
-    selector(`.d-1--info-candidato p:nth-child(1)`).style.display = 'none'
-    selector(`.d-1--info-candidato p:nth-child(2)`).style.display = 'none'
 }
 
 function atualizaInterface(){

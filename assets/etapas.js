@@ -1,3 +1,6 @@
+let selector = seletor => document.querySelector(`${seletor}`)
+let selectorAll = seletor => document.querySelectorAll(`${seletor}`)
+let etapaAtual = 0
 let etapas = [
     {
         cargo: 'vereador',
@@ -64,3 +67,37 @@ let etapas = [
         ]
     }
 ]
+
+function informacoesCandidatos(){
+    let index = etapaAtual
+    let candidatosGerais = etapas[index].candidatos
+    selector('.candidato').innerHTML = ''
+
+    candidatosGerais.map((candidato) => {
+        let candidatoInfo = selector('.models .candidatos--candidato').cloneNode(true)
+            candidatoInfo.querySelector('img').src = candidato.fotos[0].url
+            candidatoInfo.querySelector('h1').innerHTML = candidato.partido
+            candidatoInfo.querySelector('p').innerHTML = candidato.numero
+        selector('.candidato').append(candidatoInfo)
+        switch (index) {
+            case 0:
+                selector('.candidatos h1').innerHTML = 'vereadores'
+                break;
+        
+            case 1:
+                selector('.candidatos h1').innerHTML = 'prefeito'
+                let vice = selector('.models .candidatos--vice').cloneNode(true)
+                    vice.querySelector('img').src = candidato.fotos[1].url
+                    vice.querySelector('h1').innerHTML = candidato.fotos[1].legenda
+                    vice.querySelector('p').innerHTML = candidato.vicePrefeito
+                selector('.candidato').append(vice)    
+                break;
+            }
+            
+            
+            
+  
+    })
+    
+
+}
